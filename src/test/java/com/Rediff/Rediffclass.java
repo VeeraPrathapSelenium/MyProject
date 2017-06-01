@@ -49,12 +49,16 @@ public class Rediffclass {
 		for(int i=1;i<=size-1;i++)
 		{
 			WebElement ele=links.get(i);
+			if(ele.isDisplayed()){
+				//System.out.println("ID:"+i+"   test:"+ele.getText());
 			ele.click();
 			System.out.println("Id number:="+i+"----"+driver.getTitle());
 			Thread.sleep(2000);
 			System.out.println("                      ");
 			driver.navigate().back();
 			links = driver.findElements(By.tagName("a"));
+			
+			}
 			
 		}
 	}
